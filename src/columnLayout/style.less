@@ -1,0 +1,46 @@
+.layout-row-wrap {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow: auto hidden;
+
+    .layout-row-resizable-wrap {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .layout-row-resizable-animation-wrap {
+        transition: width 300ms ease;
+    }
+
+    .react-reverse-resizable {
+        flex-direction: row-reverse;
+    }
+
+    .layout-row-content {
+        flex: 1;
+        height: 100%;
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
+
+    .layout-drag-handle-content {
+        width: 16px;
+        overflow: hidden;
+        height: 100%;
+        background-color: chartreuse;
+        cursor: col-resize;
+    }
+
+    .layout-drag-handle-hidden-content {
+        display: none;
+    }
+
+    .layout-flex-wrap {
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+    }
+}

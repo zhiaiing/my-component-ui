@@ -1,6 +1,6 @@
-import React from 'react';
-import Button from "../../components/button/index";
-import IButton from "../../components/button/src/module";
+import React, { FC } from 'react';
+import Button from "../../../src/button/src/button";
+import IButton from "../../../src/button/src/module";
 import { ArgsTable } from '@storybook/addon-docs'
 import { Story } from '@storybook/react';
 import { StoryFnReactReturnType } from '@storybook/react/dist/ts3.9/client/preview/types';
@@ -9,6 +9,13 @@ import { StoryFnReactReturnType } from '@storybook/react/dist/ts3.9/client/previ
 export default {
     title: 'Button',
     component: Button,
+    parameters: {
+        props: {
+            propTablesExclude: [
+                // Other // the actual component
+            ]
+        }
+    }
     // parameters: {
     //     controls: {
     //         presetColors: [
@@ -18,18 +25,18 @@ export default {
     //         ]
     //     },
     // },
-    argTypes: {
-        className: {
-            control: 'text',
-            defaultValue: "",
-            description: "className"
-        },
-        // aaa: {
-        //     control: 'string',
-        //     // description: "111",
-        //     default: '111'
-        // }
-    },
+    // argTypes: {
+    //     className: {
+    //         control: 'text',
+    //         defaultValue: "",
+    //         description: "className"
+    //     },
+    //     // aaa: {
+    //     //     control: 'string',
+    //     //     // description: "111",
+    //     //     default: '111'
+    //     // }
+    // },
 };
 
 
@@ -48,11 +55,11 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => (
 );
 
 export const BasicSetup = () => (
-    <Wrapper>
-        {/* <ArgsTable of={Button} /> */}
-        <Button>1</Button>
-    </Wrapper>
+
+    <Button> 1</Button>
 );
+
+{/* <ArgsTable of={Button} /> */ }
 
 // const templateForComponent = <P,>(Component: (props: P) => StoryFnReactReturnType) => (
 //     props: P
